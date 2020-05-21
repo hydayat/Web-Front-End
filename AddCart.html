@@ -33,18 +33,18 @@
 				<br><br><br><br>
 				<div class="AddCartForm">
 					<div class="GoodContent">
-						<div class="GoodImg"></div>
+						<div id="Img" class="GoodImg"></div>
 						<div class="GoodInfo">
 							<h1 id="GoodName" align="center"></h1>
 							<hr>
 							<div class="Price">
 								<div class="PriceTag">Price:</div>
-								<div class="PriceNumber">$50</div>
+								<div id="Price" class="PriceNumber">￥0</div>
 							</div>
 							<hr>
 							<div class="Amount">
 								<div class="AmountTag">Amount:</div>
-								<input class="AmountInput" oninput = "value=value.replace(/[^\d]/g,'')"/>
+								<input class="AmountInput" value="0" oninput = "value=value.replace(/[^\d]/g,'')"/>
 							</div>
 							
 							<hr>
@@ -58,7 +58,10 @@
 		</div>
 		<script type="text/javascript">
 			window.onload = function(){
-				document.getElementById("GoodName").innerText=decodeURI(getQueryVariable("GoodName"));
+				goodName = decodeURI(getQueryVariable("GoodName"));
+				document.getElementById("GoodName").innerText = goodName;
+				document.getElementById("Price").innerText = "￥"+getQueryVariable("Price");
+				document.getElementById("Img").style.backgroundImage = "url(img/Good/" + goodName + ".jpg)"
 			}
 			function back(){
 				document.location.href = "store.html"

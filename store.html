@@ -32,10 +32,10 @@
 			<!-- 第一行商品 -->
 			<div class="Line">
 				<div class="Good">
-					<div class="ImageDiv"></div>
+					<div id="Img1" class="ImageDiv"></div>
 					<div class="GoodInfo">
-						<div id="GoodName1" class="GoodName">Jindian Milk</div>
-						<div class="Price">￥500</div>
+						<div id="GoodName1" class="GoodName">M1A1</div>
+						<div id="Price1" class="Price">￥500</div>
 					</div>
 					<div class="ButtonGroup">
 						<button class="GoodButton" onclick="like(1)">Like</button><br>
@@ -43,46 +43,133 @@
 					</div>
 				</div>
 				<div class="Good">
-					
+					<div id="Img2" class="ImageDiv"></div>
+					<div class="GoodInfo">
+						<div id="GoodName2" class="GoodName">M1A2</div>
+						<div id="Price2" class="Price">￥480</div>
+					</div>
+					<div class="ButtonGroup">
+						<button class="GoodButton" onclick="like(2)">Like</button><br>
+						<button class="GoodButton" onclick="buy(2)">Buy</button>
+					</div>
 				</div>
 				<div class="Good">
-					
+					<div id="Img3" class="ImageDiv"></div>
+					<div class="GoodInfo">
+						<div id="GoodName3" class="GoodName">M41</div>
+						<div id="Price3" class="Price">￥200</div>
+					</div>
+					<div class="ButtonGroup">
+						<button class="GoodButton" onclick="like(3)">Like</button><br>
+						<button class="GoodButton" onclick="buy(3)">Buy</button>
+					</div>
 				</div>
 				<div class="Good">
-					
+					<div id="Img4" class="ImageDiv"></div>
+					<div class="GoodInfo">
+						<div id="GoodName4" class="GoodName">MarderIII</div>
+						<div id="Price4" class="Price">￥180</div>
+					</div>
+					<div class="ButtonGroup">
+						<button class="GoodButton" onclick="like(4)">Like</button><br>
+						<button class="GoodButton" onclick="buy(4)">Buy</button>
+					</div>
 				</div>
 				<div class="Good">
-					
+					<div id="Img5" class="ImageDiv"></div>
+					<div class="GoodInfo">
+						<div id="GoodName5" class="GoodName">Merkava</div>
+						<div id="Price5" class="Price">￥320</div>
+					</div>
+					<div class="ButtonGroup">
+						<button class="GoodButton" onclick="like(5)">Like</button><br>
+						<button class="GoodButton" onclick="buy(5)">Buy</button>
+					</div>
 				</div>
 			</div>
 			<br>
 			<!-- 第二行商品 -->
 			<div class="Line">
 				<div class="Good">
-					
+					<div id="Img6" class="ImageDiv"></div>
+					<div class="GoodInfo">
+						<div id="GoodName6" class="GoodName">Panther</div>
+						<div id="Price6" class="Price">￥240</div>
+					</div>
+					<div class="ButtonGroup">
+						<button class="GoodButton" onclick="like(6)">Like</button><br>
+						<button class="GoodButton" onclick="buy(6)">Buy</button>
+					</div>
 				</div>
 				<div class="Good">
-					
+					<div id="Img7" class="ImageDiv"></div>
+					<div class="GoodInfo">
+						<div id="GoodName7" class="GoodName">Wespe</div>
+						<div id="Price7" class="Price">￥110</div>
+					</div>
+					<div class="ButtonGroup">
+						<button class="GoodButton" onclick="like(7)">Like</button><br>
+						<button class="GoodButton" onclick="buy(7)">Buy</button>
+					</div>
 				</div>
 				<div class="Good">
-					
+					<div id="Img8" class="ImageDiv"></div>
+					<div class="GoodInfo">
+						<div id="GoodName8" class="GoodName">T-55A</div>
+						<div id="Price8" class="Price">￥350</div>
+					</div>
+					<div class="ButtonGroup">
+						<button class="GoodButton" onclick="like(8)">Like</button><br>
+						<button class="GoodButton" onclick="buy(8)">Buy</button>
+					</div>
 				</div>
 				<div class="Good">
-					
+					<div id="Img9" class="ImageDiv"></div>
+					<div class="GoodInfo">
+						<div id="GoodName9" class="GoodName">StugIII</div>
+						<div id="Price9" class="Price">￥150</div>
+					</div>
+					<div class="ButtonGroup">
+						<button class="GoodButton" onclick="like(9)">Like</button><br>
+						<button class="GoodButton" onclick="buy(9)">Buy</button>
+					</div>
 				</div>
 				<div class="Good">
-					
+					<div id="Img10" class="ImageDiv"></div>
+					<div class="GoodInfo">
+						<div id="GoodName10" class="GoodName">Merkava</div>
+						<div id="Price10" class="Price">￥320</div>
+					</div>
+					<div class="ButtonGroup">
+						<button class="GoodButton" onclick="like(10)">Like</button><br>
+						<button class="GoodButton" onclick="buy(10)">Buy</button>
+					</div>
 				</div>
 			</div>
 		</div>
 		<script>
+			window.onload = function(){
+				//加载商品图片
+				document.getElementById("Img1").style.backgroundImage = "url(img/Good/M1A1.jpg)";
+				document.getElementById("Img2").style.backgroundImage = "url(img/Good/M1A2.jpg)";
+				document.getElementById("Img3").style.backgroundImage = "url(img/Good/M41.jpg)";
+				document.getElementById("Img4").style.backgroundImage = "url(img/Good/MarderIII.jpg)";
+				document.getElementById("Img5").style.backgroundImage = "url(img/Good/Merkava.jpg)";
+				document.getElementById("Img6").style.backgroundImage = "url(img/Good/Panther.jpg)";
+				document.getElementById("Img7").style.backgroundImage = "url(img/Good/Wespe.jpg)";
+				document.getElementById("Img8").style.backgroundImage = "url(img/Good/T-55A.jpg)";
+				document.getElementById("Img9").style.backgroundImage = "url(img/Good/StugIII.jpg)";
+				document.getElementById("Img10").style.backgroundImage = "url(img/Good/M109A3G.jpg)";
+			}
 			function like(index){
 				goodName = document.getElementById("GoodName"+index).innerText;
-				document.location.href = "AddCart.html?GoodName="+encodeURI(goodName);
+				price = document.getElementById("Price"+index).innerText.substring(1)
+				document.location.href = "AddCart.html?GoodName="+encodeURI(goodName)+"&Price="+price;
 			}
 			function buy(index){
 				goodName = document.getElementById("GoodName"+index).innerText;
-				document.location.href = "createOrder.html?GoodName="+encodeURI(goodName);
+				price = document.getElementById("Price"+index).innerText.substring(1)
+				document.location.href = "createOrder.html?GoodName="+encodeURI(goodName)+"&Price="+price;
 			}
 		</script>
 		<script src="js/account.js"></script>
@@ -194,8 +281,6 @@
 	.ImageDiv{
 		width: 100%;
 		height: 75%;
-		/* background-color: #4169E1; */
-		background-image: url(img/milk.jpg);
 		background-size: 100% 100%;
 		margin: 0 auto;
 	}

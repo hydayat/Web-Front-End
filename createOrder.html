@@ -33,7 +33,7 @@
 				<br><br><br><br>
 				<div class="AddCartForm">
 					<div class="GoodContent">
-						<div class="GoodImg"></div>
+						<div id="Img" class="GoodImg"></div>
 						<div class="GoodInfo">
 							<h1 id="GoodName" align="center"></h1>
 							<hr>
@@ -44,12 +44,12 @@
 							<hr>
 							<div class="Price">
 								<div class="PriceTag">Price:</div>
-								<div id="PerPrice" class="PriceNumber">￥50</div>
+								<div id="Price" class="PriceNumber">￥50</div>
 							</div>
 							<hr>
 							<div class="Amount">
 								<div class="AmountTag">Amount:</div>
-								<input id="Amount" class="AmountInput" oninput = "value=value.replace(/[^\d]/g,'')" onchange="updateTotal()"/>
+								<input id="Amount" class="AmountInput" value="0" oninput = "value=value.replace(/[^\d]/g,'')" onchange="updateTotal()"/>
 							</div>
 							<hr>
 							<div class="Total">
@@ -66,12 +66,17 @@
 		<script type="text/javascript">
 			window.onload = function(){
 				//设置商品名
-				document.getElementById("GoodName").innerText=decodeURI(getQueryVariable("GoodName"));
+				goodName = decodeURI(getQueryVariable("GoodName"));
+				document.getElementById("GoodName").innerText = goodName;
 				//设置订单时间
 				var day2 = new Date();
 				day2.setTime(day2.getTime());
 				var s2 = day2.getFullYear()+"-" + (day2.getMonth()+1) + "-" + day2.getDate();
 				document.getElementById("Time").innerText = s2
+				//设置商品单价
+				document.getElementById("Price").innerText = "￥"+getQueryVariable("Price");
+				//设置商品图片
+				document.getElementById("Img").style.backgroundImage = "url(img/Good/" + goodName + ".jpg)"
 			}
 			function back(){
 				document.location.href = "store.html"
@@ -87,7 +92,7 @@
 				return(false);
 			}
 			function updateTotal(){
-				perPrice = document.getElementById("PerPrice").innerText.substring(1);
+				perPrice = document.getElementById("Price").innerText.substring(1);
 				amount = document.getElementById("Amount").value;
 				totalPrice = perPrice*amount;
 				document.getElementById("TotalAmount").innerText = "￥" + totalPrice;
@@ -102,7 +107,7 @@
 </html>
 <style>
 	.Body {
-		background-image: url(img/farm.jpg);
+		background-image: url(img/river.jpg);
 		background-size: 100%;
 	}
 	.MainContent{
@@ -216,7 +221,7 @@
 	.PriceTag {
 		margin-right: 50px;
 	}
-	.PriceNumber, .TotalAmount {
+	.TotalAmount {
 		color: #FF0000;
 	}
 	.Amount {

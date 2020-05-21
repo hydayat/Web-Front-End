@@ -55,7 +55,7 @@
 							<div class="ItemImg"></div>
 						</div>
 						<div class="Atom">
-							<p align="center" class="GoodName">Jindian Milk</p>
+							<p align="center" class="GoodName">M1A1</p>
 						</div>
 						<div class="Atom">
 							<p align="center" class="Price">￥500</p>
@@ -79,7 +79,7 @@
 							<div class="ItemImg"></div>
 						</div>
 						<div class="Atom">
-							<p align="center" class="GoodName">Jindian Milk</p>
+							<p align="center" class="GoodName">M1A1</p>
 						</div>
 						<div class="Atom">
 							<p align="center" class="Price">￥500</p>
@@ -175,22 +175,30 @@
 		margin-top: 20px;
 		padding-top: 8px;
 	}
-	.CartBar, .CartContent {
+	.CartBar {
 		width: 100%;
 		background-color: rgba(255, 255, 255, 0.7);
+		border-radius: 10px;
+	}
+	.CartContent {
+		width: 100%;
+		background-color: rgba(255, 255, 255, 0.7);
+		border-radius: 10px;
 	}
 	.Item {
-		width: 100%;
+		width: 98%;
 		height: 100px;
-		/* background-color: white; */
+		background-color: white;
 		display: flex;
 		justify-content: space-around;
 		font-weight: 400;
+		margin: 0 auto;
+		border-radius: 10px;
 	}
 	.ItemImg {
 		height: 100%;
 		width: 100px;
-		background-image: url(img/milk.jpg);
+		background-image: url(img/Good/M1A1.jpg);
 		/* background-color: #000000; */
 		background-size: 100% 100%;
 		margin: 0 auto;
@@ -207,7 +215,7 @@
 	}
 	.Price, .Total, .GoodName, .Amount {
 		margin-top: 30px;
-		font-size: 25px;
+		font-size: 20px;
 	}
 	.BuyButton, .DeleteButton, .BackButton {
 		width: 80px;
@@ -226,6 +234,7 @@
 	}
 	.BackButton {
 		margin-left: 20px;
+		margin-bottom: 0px;
 		background-color: #4169E1;
 	}
 </style>
