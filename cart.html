@@ -49,55 +49,52 @@
 						Option
 					</div>
 				</div>
-				<div class="CartContent">
-					<div class="Item">
-						<div class="Atom">
-							<div class="ItemImg"></div>
-						</div>
-						<div class="Atom">
-							<p align="center" class="GoodName">M1A1</p>
-						</div>
-						<div class="Atom">
-							<p align="center" class="Price">￥500</p>
-						</div>
-						<div class="Atom">
-							<p align="center" class="Amount">8</p>
-						</div>
-						<div class="Atom">
-							<p align="center" class="Total">￥4000</p>
-						</div>
-						<div class="Atom">
-							<div>
-								<button class="BuyButton">Buy</button><br>
-								<button class="DeleteButton">Delete</button>
-							</div>
-						</div>
-					</div>
-					<hr>
-					<div class="Item">
-						<div class="Atom">
-							<div class="ItemImg"></div>
-						</div>
-						<div class="Atom">
-							<p align="center" class="GoodName">M1A1</p>
-						</div>
-						<div class="Atom">
-							<p align="center" class="Price">￥500</p>
-						</div>
-						<div class="Atom">
-							<p align="center" class="Amount">8</p>
-						</div>
-						<div class="Atom">
-							<p align="center" class="Total">￥4000</p>
-						</div>
-						<div class="Atom">
-							<div>
-								<button class="BuyButton">Buy</button><br>
-								<button class="DeleteButton">Delete</button>
-							</div>
-						</div>
-					</div>
-					<hr>
+				<div id="CartContent" class="CartContent">
+					<script>
+						//获取购物车列表
+						goods = [{
+							name: "M1A1",
+							price: 500,
+							amount: 8,
+						},{
+							name: "M1A2",
+							price: 480,
+							amount: 5,
+						}];
+						//列表渲染
+						for(var i = 0; i < goods.length; i++){
+							goodName = goods[i].name;
+							price = goods[i].price;
+							amount = goods[i].amount;
+							total = price * amount;
+							document.write(
+								"<div id = 'Item" + i + "' class='Item'>" + 
+									"<div class='Atom'>" +
+										"<div class='ItemImg' style='background-image: url(img/Good/" + goodName + ".jpg);'></div>" +
+									"</div>" +
+									"<div class='Atom'>" + 
+										"<p id='GoodName" + i +"' align='center' class='GoodName'>" + goodName + "</p>" + 
+									"</div>" + 
+									"<div class='Atom'>" + 
+										"<p id='Price" + i + "' align='center' class='Price'>￥" + price + "</p>" + 
+									"</div>" +
+									"<div class='Atom'>" + 
+										"<p id='Amount" + i + "' align='center' class='Amount'>" + amount + "</p>" +
+									"</div>" +
+									"<div class='Atom'>" +
+										"<p align='center' class='Total'>￥" + total + "</p>" +
+									"</div>" +
+									"<div class='Atom'>" +
+										"<div>" +
+											"<button class='BuyButton' onclick='buy(" + i + ")'>Buy</button><br>" +
+											"<button class='DeleteButton' onclick='remove(" + i + ")'>Delete</button>" +
+										"</div>" +
+									"</div>" +
+								"</div>" +
+								"<hr id='Hr" + i + "'>"
+							);
+						}
+					</script>
 				</div>
 			</div>
 		</div>
@@ -105,6 +102,17 @@
 		<script>
 			function back(){
 				document.location.href = "store.html";
+			}
+			function buy(index){
+				goodName = document.getElementById("GoodName" + index).innerText;
+				price = document.getElementById("Price" + index).innerText.substring(1);
+				amount = document.getElementById("Amount" + index).innerText;
+				url = "createOrder.html?GoodName=" + goodName + "&Price=" + price + "&Amount=" + amount;
+				document.location.href = url;
+			}
+			function remove(index){
+				document.getElementById("Item" + index).remove();
+				document.getElementById("Hr" + index).remove();
 			}
 		</script>
 	</body>
@@ -198,8 +206,7 @@
 	.ItemImg {
 		height: 100%;
 		width: 100px;
-		background-image: url(img/Good/M1A1.jpg);
-		/* background-color: #000000; */
+		/* background-image: url(img/Good/M1A1.jpg); */
 		background-size: 100% 100%;
 		margin: 0 auto;
 	}

@@ -49,7 +49,9 @@
 							<hr>
 							<div class="Amount">
 								<div class="AmountTag">Amount:</div>
+								<button class="AlgoButton" onclick="decrease()">-</button>
 								<input id="Amount" class="AmountInput" value="0" oninput = "value=value.replace(/[^\d]/g,'')" onchange="updateTotal()"/>
+								<button class="AlgoButton" onclick="increase()">+</button>
 							</div>
 							<hr>
 							<div class="Total">
@@ -77,6 +79,10 @@
 				document.getElementById("Price").innerText = "￥"+getQueryVariable("Price");
 				//设置商品图片
 				document.getElementById("Img").style.backgroundImage = "url(img/Good/" + goodName + ".jpg)"
+				//设置商品数量
+				document.getElementById("Amount").value = getQueryVariable("Amount");
+				//设置商品总金额
+				document.getElementById("TotalAmount").innerHTML = "￥" + getQueryVariable("Amount")*getQueryVariable("Price")
 			}
 			function back(){
 				document.location.href = "store.html"
@@ -100,6 +106,17 @@
 			function createOrder(){
 				document.location.href = "store.html"
 				alert("Create an order successfully!")
+			}
+			function increase(){
+				document.getElementById("Amount").value = Number(document.getElementById("Amount").value) + 1;
+				updateTotal();
+			}
+			function decrease(){
+				originAmount = Number(document.getElementById("Amount").value);
+				if(originAmount > 0){
+					document.getElementById("Amount").value = originAmount - 1;
+					updateTotal();
+				}
 			}
 		</script>
 		<script src="js/account.js"></script>
@@ -232,13 +249,17 @@
 		margin-right: 20px;
 	}
 	.AmountInput {
-		width: 100%;
+		width: 50px;
+		text-align: center;
 	}
 	.TotalTag {
 		margin-right: 50px;
 	}
 	.PriceTag, .AmountTag, .PriceNumber, .TimeTag, .TimeContent, .TotalTag, .TotalAmount {
 		font-size: 20px;
+	}
+	.AlgoButton {
+		width: 30px;
 	}
 	.AddButton {
 		width: 80%;

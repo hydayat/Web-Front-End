@@ -50,50 +50,54 @@
 					</div>
 				</div>
 				<div class="CartContent">
-					<div class="Item">
-						<div class="Atom">
-							<div class="ItemImg"></div>
-						</div>
-						<div class="Atom">
-							<p align="center" class="GoodName">M1A1</p>
-						</div>
-						<div class="Atom">
-							<p align="center" class="Date">2012-5-12</p>
-						</div>
-						<div class="Atom">
-							<p align="center" class="Price">￥500</p>
-						</div>
-						<div class="Atom">
-							<p align="center" class="Amount">8</p>
-						</div>
-						<div class="Atom">
-							<p align="center" class="Total">￥4000</p>
-						</div>
-						
-					</div>
-					<hr>
-					<div class="Item">
-						<div class="Atom">
-							<div class="ItemImg"></div>
-						</div>
-						<div class="Atom">
-							<p align="center" class="GoodName">M1A1</p>
-						</div>
-						<div class="Atom">
-							<p align="center" class="Date">2012-5-12</p>
-						</div>
-						<div class="Atom">
-							<p align="center" class="Price">￥500</p>
-						</div>
-						<div class="Atom">
-							<p align="center" class="Amount">8</p>
-						</div>
-						<div class="Atom">
-							<p align="center" class="Total">￥4000</p>
-						</div>
-						
-					</div>
-					<hr>
+					<script>
+						orders = [{
+							name: "M41",
+							date: "2014-8-1",
+							price: 200,
+							amount: 3
+						},{
+							name: "T-55A",
+							date: "2018-2-14",
+							price: 350,
+							amount: 6
+						},{
+							name: "M109A3G",
+							date: "2019-3-1",
+							price: 390,
+							amount: 2
+						}];
+						for(var i = 0; i < orders.length; i++){
+							goodName = orders[i].name;
+							date = orders[i].date;
+							price = orders[i].price;
+							amount = orders[i].amount;
+							total = price*amount;
+							document.write(
+								"<div class='Item'>" +
+									"<div class='Atom'>" +
+										"<div class='ItemImg' style='background-image: url(img/Good/" + goodName + ".jpg);'></div>" +
+									"</div>" +
+									"<div class='Atom'>" +
+										"<p align='center' class='GoodName'>" + goodName + "</p>" +
+									"</div>" +
+									"<div class='Atom'>" +
+										"<p align='center' class='Date'>" + date + "</p>" +
+									"</div>" +
+									"<div class='Atom'>" +
+										"<p align='center' class='Price'>￥" + price + "</p>" +
+									"</div>" +
+									"<div class='Atom'>" +
+										"<p align='center' class='Amount'>"+ amount + "</p>" +
+									"</div>" +
+									"<div class='Atom'>" +
+										"<p align='center' class='Total'>￥" + total + "</p>" +
+									"</div>" +
+								"</div>" +
+								"<hr>"
+							);
+						}
+					</script>
 				</div>
 			</div>
 		</div>
