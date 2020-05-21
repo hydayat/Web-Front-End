@@ -21,8 +21,9 @@
 			<div class="Avator"></div>
 		</div>
 		<hr width="90%" color="antiquewhite">
-		<div>
+		<div class="MainContent">
 			<div class="InlinePart">
+				<button class="BackButton" onclick="back()"> << Back</button>
 				<h1 class="CartTitle" align="center">Add To Shopping Cart</h1>
 				<p class="AddCartBody">
 					If you have your eye on our items but are not sure to buy it at present, then you can add it to your shopping chart in that you may purchase it in the future.
@@ -43,8 +44,9 @@
 							<hr>
 							<div class="Amount">
 								<div class="AmountTag">Amount:</div>
-								<input class="AmountInput"/>
+								<input class="AmountInput" oninput = "value=value.replace(/[^\d]/g,'')"/>
 							</div>
+							
 							<hr>
 							<br>
 							<br>
@@ -57,6 +59,9 @@
 		<script type="text/javascript">
 			window.onload = function(){
 				document.getElementById("GoodName").innerText=decodeURI(getQueryVariable("GoodName"));
+			}
+			function back(){
+				document.location.href = "store.html"
 			}
 			function getQueryVariable(variable)
 			{
@@ -76,13 +81,28 @@
 		background-image: url(img/patato.jpg);
 		background-size: 100%;
 	}
+	.MainContent{
+		display: flex;
+		justify-content: center;
+	}
 	.InlinePart {
-		display: inline-block;
+		/* display: inline-block; */
 		width: 49%;
 	}
 	.InlinePart2 {
 		display: inline-block;
 		width: 25%;
+	}
+	.BackButton{
+		border: none;
+		width: 100px;
+		height: 40px;
+		font-size: 16px;
+		background-color: #4169E1;
+		color: white;
+		margin-left: 55px;
+		margin-top: 20px;
+		border-radius: 8px;
 	}
 	.Title{
 		color: #FFFFFF;
@@ -130,6 +150,7 @@
 	.CartTitle{
 		font-size: 50px;
 		color: #FFFFFF;
+		margin-top: 100px;
 	}
 	.AddCartBody {
 		font-size: 20px;

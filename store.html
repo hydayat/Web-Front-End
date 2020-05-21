@@ -39,7 +39,7 @@
 					</div>
 					<div class="ButtonGroup">
 						<button class="GoodButton" onclick="like(1)">Like</button><br>
-						<button class="GoodButton">Buy</button>
+						<button class="GoodButton" onclick="buy(1)">Buy</button>
 					</div>
 				</div>
 				<div class="Good">
@@ -79,6 +79,10 @@
 			function like(index){
 				goodName = document.getElementById("GoodName"+index).innerText;
 				document.location.href = "AddCart.html?GoodName="+encodeURI(goodName);
+			}
+			function buy(index){
+				goodName = document.getElementById("GoodName"+index).innerText;
+				document.location.href = "createOrder.html?GoodName="+encodeURI(goodName);
 			}
 		</script>
 	</body>
