@@ -1,0 +1,121 @@
+/* 
+The stylesheet for the index.html
+*/
+
+body {
+    background-image: url(../img/star.jpg);
+    background-size: 100%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.main{
+    text-align: center;
+    margin-top: 10%;
+}
+.main>div
+{
+    display: inline-block;
+    width: 49%;
+    vertical-align: middle;
+}
+.main>div:nth-child(2){
+    width: 40%;
+}
+h1 {
+    font-size: 50px;
+    color: #FFFFFF;
+}
+h1+p {
+    font-size: 20px;
+    color: #FFFFFF;
+    width: 80%;
+    margin: 0 auto;
+}
+.panel{
+    position: relative;
+    height: 370px;
+    background-color: rgba(255,255,255,0.7);
+    width: 100%;
+    overflow: hidden;
+}
+#login {
+    position: absolute;
+    transition: transform 0.3s;
+}
+#login>h1,#signup>h1 {
+    padding: 10px 0 20px;
+    color: black;
+    margin-bottom: 10px;
+}
+#signup{
+    position: absolute;
+    transition: transform 0.3s;
+}
+.shiftleft{
+    transform:translateX(-100%)
+}
+/* .shiftcenter{
+    transform: translateX(0%);
+} */
+.shiftright{
+    transform: translateX(100%);
+}
+form {
+    width: 80%;
+    margin: 0 auto;
+}
+input {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 30px;
+    border: 1px solid #dcdfe6;
+    border-radius: 4px;
+    padding-left: 5px;
+    box-sizing: border-box;
+    outline: none;
+}
+input:focus{
+    border-color: #409eff;
+}
+#signup input:nth-child(2){
+    margin-bottom: 5px;
+}
+#signup input:nth-child(3){
+    margin-bottom: 10px;
+}
+button{
+    width: 49%;
+    height: 40px;
+    margin-top: 5px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    font-size: 20px;
+    transition: all 0.2s;
+    cursor: pointer;
+    outline: none;
+}
+button:not(:last-child){
+    background-color: #ecf5ff;
+    color: #67c23a;
+    border: 1px solid#c2e7b0;
+}
+button:not(:last-child):hover{
+    background-color: #67c23a;
+    color: white;
+}
+button:last-child {
+    background-color: #ecf5ff;
+    color: #409eff;
+    border: 1px solid #b3d8ff;
+}
+button:last-child:hover {
+    background-color: #409eff;
+    color: white;
+}
+a{
+    display: block;
+    margin-top: 20px;
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    cursor: pointer;
+}
