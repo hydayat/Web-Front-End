@@ -5,29 +5,34 @@
 		<title>V-Mall</title>
 	</head>
 	<body>
-		<h1>V-Mall</h1>
-		<input placeholder="keywords" value=""/>
-		<button>search</button>
-		<div class="user">
-			<div>
-				<div class="username">
-					Hidayat
+		<div>
+			<h1>V-Mall</h1>
+			<!-- <input placeholder="keywords" value=""/>
+			<button>search</button> -->
+			<div class="user">
+				<div>
+					<div class="username">
+						Veex
+					</div>
+					<button>Cart</button>
+					<button>Order</button>
 				</div>
-				<button>Cart</button>
-				<button>Order</button>
+				<img src="img/avator.jpg" />
 			</div>
-			<img src="img/avator.jpg" />
 		</div>
-		<hr>
 		<br>
 		<div class="store">
 				<div>
-					<img src="img/milk.jpg"></img>
+					<img src="img/milk.jpg"/>
 					<div class="caption">
-						<label class="GoodName">Jindian Milk</label>
-						<button onclick="like(1)">Like</button><br>
-						<label class="Price">￥500</label>
-						<button>Buy</button>
+						<div>
+							<label>Jindian Milk</label><br>
+							<label>￥500</label>
+						</div>
+						<div>
+							<button onclick="like(1)">Like</button><br>
+							<button>Buy</button>
+						</div>
 					</div>
 				</div>
 				<div>
@@ -62,13 +67,20 @@
 		background-image: url(img/river.jpg);
 		background-size: 100%;
 		font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+		margin-top: 0;
 	}
 	h1{
 		display: inline-block;
-		width: 25%;
-		color: #FFFFFF;
-		font-size: 3.5rem;
-		text-align: center;
+		color: rgb(27, 27, 27);
+		font-size: 4.5rem;
+		text-align:	center;
+		margin: 20px;
+	}
+	body>div:first-child{
+		background-color: rgba(255,255,255,0.6);
+		width: 85%;
+		margin: 0 auto;
+		backdrop-filter: blur(3px);
 	}
 	input{
 		border: 1px solid #dcdfe6;
@@ -97,12 +109,8 @@
 		background-color: #409eff !important;
 		color: white !important;
 	}
-	hr{
-		color: antiquewhite;
-		width: 90%;;
-	}
 	.user{
-		height: 80px;
+		height: 100%;
 		width: 200px;
 		background-color: rgba(255,255,255,0.6);
 		float: right;
@@ -130,7 +138,7 @@
 	}
 	button{
 		width: 50px;
-		margin-top: 5px;
+		margin-top: 7px;
 		height: 20px;
 		border-radius: 10px;
 		transition: all 0.2s;
@@ -156,34 +164,65 @@
 		color: white;
 	}
 	.store{
-		width: 90%;
-		height: 600px;
-		margin: 0 auto;
-		background-color: rgba(255,255,255,0.6);
-		display: grid;
-		grid-template-columns: repeat(5, 18%);
-		grid-template-rows: repeat(2, 45%);
-		align-content: space-around;
-		justify-content: space-around;
+		width: 70%;
+		height: 460px;
+		margin: 30px auto;
+		text-align: left;
+		background-color: rgba(255,255,255,0);
+		overflow: auto;
+	}
+	::-webkit-scrollbar {
+		width: 8px;
+	}
+	::-webkit-scrollbar-thumb {
+		border-radius: 8px;
+		background-color: rgba(240, 240, 240, .5);
+		box-shadow: inset 0 0 0px rgba(240, 240, 240, .5);
 	}
 	.store>div{
+		vertical-align: middle;
 		background-color: white;
-		padding: 5px;
-		position:relative;
+		display: inline-block;
+		width: 230px;
+		height: 210px;
+		margin: 10px 12px;
+		position: relative;
+		overflow: hidden;
+		transition: filter 0.3s;
 	}
 	img{
 		width: 100%;
-		height: 75%;
+		height: 100%;
 	}
-	.caption>button{
+	.store>div:hover .caption{
+		transform: translateY(-100%);
+	}
+	.store>div:hover{
+		filter: brightness(0.9);
+	}
+	.caption{
+		background-color: rgba(230,230,230,0.6);
+		width: 100%;
 		position: absolute;
-		right: 0;
+		height: 30%;
+		text-align: center;
+		backdrop-filter: blur(10px);
+		transform:  scale(1.1) translateY(10%);
+		transition: transform 0.3s;
 	}
-	.Price{
+	.caption>div{
+		display: inline-block;
+		width: 45%;
+		height: 100%;
+		vertical-align: middle;
+	}
+	label{
+		font-size: 1.1rem;
+		line-height: 1.7;
+		margin: 5px;
+	}
+	label:last-child{
 		color: red;
-		margin: 5px;
-	}
-	.GoodName{
-		margin: 5px;
+		font-weight: bold;
 	}
 </style>
