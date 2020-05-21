@@ -3,6 +3,9 @@
 	<head>
 		<meta charset="utf-8">
 		<title></title>
+		<!-- <style>
+			@import url("css/amountInput.css");
+		</style> -->
 	</head>
 	<body class="Body">
 		<div class="InlinePart2">
@@ -44,7 +47,9 @@
 							<hr>
 							<div class="Amount">
 								<div class="AmountTag">Amount:</div>
-								<input class="AmountInput" value="0" oninput = "value=value.replace(/[^\d]/g,'')"/>
+								<button class="AlgoButton" onclick="decrease()">-</button>
+								<input id="Amount" class="AmountInput" value="0" oninput = "value=value.replace(/[^\d]/g,'')"/>
+								<button class="AlgoButton" onclick="increase()">+</button>
 							</div>
 							
 							<hr>
@@ -80,8 +85,18 @@
 				alert("Add to Shopping Cart Successfully!");
 				document.location.href = "store.html";
 			}
+			function increase(){
+				document.getElementById("Amount").value = Number(document.getElementById("Amount").value) + 1;
+			}
+			function decrease(){
+				originAmount = Number(document.getElementById("Amount").value);
+				if(originAmount > 0){
+					document.getElementById("Amount").value = originAmount - 1;
+				}
+			}
 		</script>
 		<script src="js/account.js"></script>
+		<!-- <script src="js/amountInput.js"></script> -->
 	</body>
 </html>
 <style>
@@ -204,10 +219,14 @@
 		margin-right: 20px;
 	}
 	.AmountInput {
-		width: 100%;
+		width: 50px;
+		text-align: center;
 	}
 	.PriceTag, .AmountTag, .PriceNumber {
 		font-size: 20px;
+	}
+	.AlgoButton {
+		width: 30px;
 	}
 	.AddButton {
 		width: 80%;

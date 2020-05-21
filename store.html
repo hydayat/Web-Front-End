@@ -137,8 +137,8 @@
 				<div class="Good">
 					<div id="Img10" class="ImageDiv"></div>
 					<div class="GoodInfo">
-						<div id="GoodName10" class="GoodName">Merkava</div>
-						<div id="Price10" class="Price">￥320</div>
+						<div id="GoodName10" class="GoodName">M109A3G</div>
+						<div id="Price10" class="Price">￥390</div>
 					</div>
 					<div class="ButtonGroup">
 						<button class="GoodButton" onclick="like(10)">Like</button><br>
@@ -168,8 +168,8 @@
 			}
 			function buy(index){
 				goodName = document.getElementById("GoodName"+index).innerText;
-				price = document.getElementById("Price"+index).innerText.substring(1)
-				document.location.href = "createOrder.html?GoodName="+encodeURI(goodName)+"&Price="+price;
+				price = document.getElementById("Price"+index).innerText.substring(1);
+				document.location.href = "createOrder.html?GoodName="+encodeURI(goodName)+"&Price="+price+"&Amount=0";
 			}
 		</script>
 		<script src="js/account.js"></script>
