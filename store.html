@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>H-Mall</title>
+	</head>
+	<body class="Body">
+		<div class="InlinePart">
+			<h1 align="center" class="Title">H-Mall</h1>
+		</div>
+		<div class="InlinePart">
+			<input value="输入关键词" class="KeyInput">
+				<button class="SearchButton">搜 索</button>
+			</input>
+		</div>
+		<div class="User">
+			<div class="UserInfo">
+				<div class="Username">
+					Hidayat
+				</div>
+				<div>
+					<button class="AccountButton">Cart</button>
+					<button class="AccountButton">Order</button>
+				</div>
+			</div>
+			<div class="Avator"></div>
+		</div>
+		<hr width="90%" color="antiquewhite">
+		<br>
+		<div class="Store">
+			<br>
+			<!-- 第一行商品 -->
+			<div class="Line">
+				<div class="Good">
+					<div class="ImageDiv"></div>
+					<div class="GoodInfo">
+						<div id="GoodName1" class="GoodName">Jindian Milk</div>
+						<div class="Price">￥500</div>
+					</div>
+					<div class="ButtonGroup">
+						<button class="GoodButton" onclick="like(1)">Like</button><br>
+						<button class="GoodButton">Buy</button>
+					</div>
+				</div>
+				<div class="Good">
+					
+				</div>
+				<div class="Good">
+					
+				</div>
+				<div class="Good">
+					
+				</div>
+				<div class="Good">
+					
+				</div>
+			</div>
+			<br>
+			<!-- 第二行商品 -->
+			<div class="Line">
+				<div class="Good">
+					
+				</div>
+				<div class="Good">
+					
+				</div>
+				<div class="Good">
+					
+				</div>
+				<div class="Good">
+					
+				</div>
+				<div class="Good">
+					
+				</div>
+			</div>
+		</div>
+		<script>
+			function like(index){
+				goodName = document.getElementById("GoodName"+index).innerText;
+				document.location.href = "AddCart.html?GoodName="+encodeURI(goodName);
+			}
+		</script>
+	</body>
+</html>
+<style>
+	.Body{
+		background-image: url(img/river.jpg);
+		background-size: 100%;
+	}
+	.Title{
+		color: #FFFFFF;
+		font-size: 50px;
+	}
+	.KeyInput{
+		border: 1px solid #ccc;
+		padding: 7px 0px;
+		border-radius: 3px;
+		padding-left:5px;
+		-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+		box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+		-webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+		-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+		transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s
+	}
+	KeyInput:focus{
+		border-color: #66afe9;
+		outline: 0;
+		-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+		box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
+	}
+	.SearchButton{
+		height: 30px;
+		width: 60px;
+		color: white;
+		background-color: royalblue;
+		border: none;
+	}
+	.User{
+		height: 80px;
+		width: 200px;
+		background-color: rgba(255,255,255,0.6);
+		float: right;
+		margin-right: 80px;
+		margin-top: 20px;
+		padding: 5px;
+	}
+	.UserInfo{
+		float: left;
+		width: 120px;
+		height: 100%;
+		text-align: center;
+	}
+	.Username{
+		color: black;
+		font-size: 20px;
+		margin-top: 5px;
+	}
+	.Avator{
+		height: 100%;
+		width: 75px;
+		float: right;
+		background-image: url(img/avator.jpg);
+		background-size: 100% 100%;
+		border-radius:50%
+	}
+	.CartButton{
+		background-image: url(img/cart.jpg);
+		background-size: 100% 100%;
+		border: none;
+		width: 35px;
+		height: 35px;
+		margin-top: 8px; 
+		margin-right: 5px;
+	}
+	.OrderButton{
+		background-image: url(img/order.jpg);
+		background-size: 100% 100%;
+		border: none;
+		width: 35px;
+		height: 35px;
+	}
+	.AccountButton{
+		width: 50px;
+		margin-top: 15px;
+	}
+	.InlinePart {
+		display: inline-block;
+		width: 25%;
+	}
+	.Store{
+		width: 90%;
+		height: 600px;
+		margin: 0 auto;
+		background-color: rgba(255,255,255,0.6);
+	}
+	.Line{
+		height: 40%;
+		width: 95%;
+		margin: 0 auto;	
+		display: flex;
+		justify-content: space-between;
+	}
+	.Good{
+		width: 18%;
+		background-color: white;
+		padding: 5px;
+	}
+	.ImageDiv{
+		width: 100%;
+		height: 75%;
+		/* background-color: #4169E1; */
+		background-image: url(img/milk.jpg);
+		background-size: 100% 100%;
+		margin: 0 auto;
+	}
+	.GoodInfo{
+		float: left;
+	}
+	.Price{
+		color: red;
+		margin: 5px;
+	}
+	.GoodName{
+		margin: 5px;
+	}
+	.ButtonGroup{
+		float: right;
+	}
+	.GoodButton{
+		width: 50px;
+		margin-top: 5px;
+	}
+</style>

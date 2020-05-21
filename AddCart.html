@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body class="Body">
+		<div class="InlinePart2">
+			<h1 align="center" class="Title">H-Mall</h1>
+		</div>
+		<div class="User">
+			<div class="UserInfo">
+				<div class="Username">
+					Hidayat
+				</div>
+				<div>
+					<button class="AccountButton">Cart</button>
+					<button class="AccountButton">Order</button>
+				</div>
+			</div>
+			<div class="Avator"></div>
+		</div>
+		<hr width="90%" color="antiquewhite">
+		<div>
+			<div class="InlinePart">
+				<h1 class="CartTitle" align="center">Add To Shopping Cart</h1>
+				<p class="AddCartBody">
+					If you have your eye on our items but are not sure to buy it at present, then you can add it to your shopping chart in that you may purchase it in the future.
+				</p>
+			</div>
+			<div class="InlinePart">
+				<br><br><br><br>
+				<div class="AddCartForm">
+					<div class="GoodContent">
+						<div class="GoodImg"></div>
+						<div class="GoodInfo">
+							<h1 id="GoodName" align="center"></h1>
+							<hr>
+							<div class="Price">
+								<div class="PriceTag">Price:</div>
+								<div class="PriceNumber">$50</div>
+							</div>
+							<hr>
+							<div class="Amount">
+								<div class="AmountTag">Amount:</div>
+								<input class="AmountInput"/>
+							</div>
+							<hr>
+							<br>
+							<br>
+							<button class="AddButton">Add To shopping Cart</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			window.onload = function(){
+				document.getElementById("GoodName").innerText=decodeURI(getQueryVariable("GoodName"));
+			}
+			function getQueryVariable(variable)
+			{
+				var query = window.location.search.substring(1);
+				var vars = query.split("&");
+				for (var i=0;i<vars.length;i++) {
+					var pair = vars[i].split("=");
+					if(pair[0] == variable){return pair[1];}
+				}
+				return(false);
+			}
+		</script>
+	</body>
+</html>
+<style>
+	.Body {
+		background-image: url(img/patato.jpg);
+		background-size: 100%;
+	}
+	.InlinePart {
+		display: inline-block;
+		width: 49%;
+	}
+	.InlinePart2 {
+		display: inline-block;
+		width: 25%;
+	}
+	.Title{
+		color: #FFFFFF;
+		font-size: 50px;
+	}
+	.SearchButton{
+		height: 30px;
+		width: 60px;
+		color: white;
+		background-color: royalblue;
+		border: none;
+	}
+	.User{
+		height: 80px;
+		width: 200px;
+		background-color: rgba(255,255,255,0.6);
+		float: right;
+		margin-right: 80px;
+		margin-top: 20px;
+		padding: 5px;
+	}
+	.UserInfo{
+		float: left;
+		width: 120px;
+		height: 100%;
+		text-align: center;
+	}
+	.Username{
+		color: black;
+		font-size: 20px;
+		margin-top: 5px;
+	}
+	.Avator{
+		height: 100%;
+		width: 75px;
+		float: right;
+		background-image: url(img/avator.jpg);
+		background-size: 100% 100%;
+		border-radius:50%
+	}
+	.AccountButton{
+		width: 50px;
+		margin-top: 15px;
+	}
+	.CartTitle{
+		font-size: 50px;
+		color: #FFFFFF;
+	}
+	.AddCartBody {
+		font-size: 20px;
+		color: #FFFFFF;
+		width: 80%;
+		margin: 0 auto;
+	}
+	.AddCartForm{
+		background-color: rgba(255,255,255,0.7);
+		width: 90%;
+		margin: 0 auto;
+		padding: 20px;
+	}
+	.GoodImg {
+		background-image: url(img/milk.jpg);
+		background-size: 100% 100%;
+		width: 300px;
+		height: 300px;
+	}
+	.GoodInfo {
+		height: 300px;
+		width: 250px;
+	}
+	.GoodContent{
+		display: flex;
+		justify-content: space-between;
+	}
+	.Price {
+		display: flex;
+		justify-content: flex-start;
+	}
+	.PriceTag {
+		margin-right: 50px;
+	}
+	.PriceNumber {
+		color: #FF0000;
+	}
+	.Amount {
+		display: flex;
+		justify-content: flex-start;
+	}
+	.AmountTag {
+		margin-right: 20px;
+	}
+	.AmountInput {
+		width: 100%;
+	}
+	.PriceTag, .AmountTag, .PriceNumber {
+		font-size: 20px;
+	}
+	.AddButton {
+		width: 80%;
+		height: 25px;
+		border: none;
+		color: white;
+		background-color: #4169E1;
+		margin-left: 25px;
+	}
+</style>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>H-Mall</title>
+	</head>
+	<body class="Body">
+		<div>
+			<div class="InlinePart">
+				<h1 class="WelcomeTitle" align="center">Welcome to H-mall</h1>
+				<p class="WelcomeBody">
+					Vpring is more than a messaging and social media web app – it is a lifestyle for everyone across the world. Chat
+					and make calls with friends, read news and use local services in Official Accounts and Mini Programs.
+				</p>
+			</div>
+			<div class="InlinePart">
+				<br><br><br><br><br><br><br>
+				<div class="SignInForm">
+					<br>
+					<h1 class="SignInTitle" align="center">Sign In</h1>
+					<form class="InputList">
+						<p>Username</p>
+						<input id="username" type="text" class="InputBox" value=""><br>
+						<p>Password</p>
+						<input id="password" type="password" class="InputBox" value="">
+						<button type="button" class="SignUpButton" onclick="signup()">Sign up</button>
+						<!-- <input class="SubmitButton" type="submit" onclick="login()" value="Sign in for H-mall" /> -->
+						<button type="button" class="SubmitButton" onclick="login()">Sign in for H-mall</button>
+					</form>
+				</div>
+				<p class="Direct" align="center" onclick="document.location.href = 'store.html'">Go To Store Directly >>></p>
+			</div>
+		</div>
+		<script type="text/javascript">
+			function signup(){
+				window.location.href="signup.html";
+			}
+			function login() {
+				//创建核心对象
+				xmlhttp = null;
+				if (window.XMLHttpRequest) { // code for Firefox, Opera, IE7, etc.
+					xmlhttp = new XMLHttpRequest();
+				} else if (window.ActiveXObject) { // code for IE6, IE5
+					xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+				}
+				//编写回调函数
+				xmlhttp.onreadystatechange = function() {
+					//if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+					if (xmlhttp.readyState == 4) {
+						document.location.href="store.html"
+					}
+				}
+				//open设置请求方式和请求路径
+				xmlhttp.open("post", "/signin", true); //一个servlet，后面还可以写是否同步
+				//设置发送数据为表单
+				xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+				//send 发送
+				var username = document.getElementById("username").value;
+				var password = document.getElementById("password").value;
+				xmlhttp.send("username=" + username + "&password=" + password);
+			}
+		</script>
+
+	</body>
+</html>
+<style>
+	.Body {
+		background-image: url(img/star.jpg);
+		background-size: 100%;
+	}
+
+	.InlinePart {
+		display: inline-block;
+		width: 49%;
+	}
+
+	.WelcomeTitle {
+		font-size: 50px;
+		color: #FFFFFF;
+	}
+
+	.WelcomeBody {
+		font-size: 20px;
+		color: #FFFFFF;
+		width: 80%;
+		margin: 0 auto;
+	}
+
+	.SignInForm {
+		background-color: rgba(255,255,255,0.7);
+		width: 70%;
+		margin: 0 auto;
+	}
+
+	.SignInTitle {
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+
+	.InputList {
+		width: 80%;
+		margin: 0 auto;
+	}
+
+	.InputBox {
+		width: 100%;
+		height: 30px;
+	}
+
+	.SubmitButton {
+		width: 100%;
+		height: 40px;
+		margin-top: 20px;
+		margin-bottom: 40px;
+		background-color: royalblue;
+		color: white;
+		font-size: 20px;
+	}
+
+	.SignUpButton {
+		background: transparent;
+		margin-top: 20px;
+		background-color: white;
+		float: right;
+	}
+	.Direct{
+		color: white;
+		font-size: 20px;
+	}
+</style>
