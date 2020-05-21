@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>V-Mall</title>
+	</head>
+	<body>
+		<h1>V-Mall</h1>
+		<input placeholder="keywords" value=""/>
+		<button>search</button>
+		<div class="user">
+			<div>
+				<div class="username">
+					Hidayat
+				</div>
+				<button>Cart</button>
+				<button>Order</button>
+			</div>
+			<img src="img/avator.jpg" />
+		</div>
+		<hr>
+		<br>
+		<div class="store">
+				<div>
+					<img src="img/milk.jpg"></img>
+					<div class="caption">
+						<label class="GoodName">Jindian Milk</label>
+						<button onclick="like(1)">Like</button><br>
+						<label class="Price">￥500</label>
+						<button>Buy</button>
+					</div>
+				</div>
+				<div>
+				</div>
+				<div>
+				</div>
+				<div>
+				</div>
+				<div>
+				</div>
+				<div>
+				</div>
+				<div>
+				</div>
+				<div>
+				</div>
+				<div>
+				</div>
+				<div>
+				</div>
+			</div>
+		<script>
+			function like(index){
+				goodName = document.getElementById("GoodName"+index).innerText;
+				document.location.href = "AddCart.html?GoodName="+encodeURI(goodName);
+			}
+		</script>
+	</body>
+</html>
+<style>
+	body{
+		background-image: url(img/river.jpg);
+		background-size: 100%;
+		font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	}
+	h1{
+		display: inline-block;
+		width: 25%;
+		color: #FFFFFF;
+		font-size: 3.5rem;
+		text-align: center;
+	}
+	input{
+		border: 1px solid #dcdfe6;
+		border-radius: 4px;
+		padding-left: 5px;
+		margin-right: 10px;
+		outline: none;
+		box-sizing: border-box;
+		height: 30px;
+	}
+	input:focus{
+		border-color: #409eff;
+	}
+	input+button{
+		height: 30px;
+		width: 60px;
+		border-radius: 10px;
+		transition: all 0.2s;
+		cursor: pointer;
+		outline: none;
+		background-color: #ecf5ff !important;
+		color: #409eff !important;
+		border: 1px solid #b3d8ff !important;
+	}
+	input+button:hover{
+		background-color: #409eff !important;
+		color: white !important;
+	}
+	hr{
+		color: antiquewhite;
+		width: 90%;;
+	}
+	.user{
+		height: 80px;
+		width: 200px;
+		background-color: rgba(255,255,255,0.6);
+		float: right;
+		margin-right: 80px;
+		margin-top: 20px;
+		padding: 5px;
+	}
+	.user>div:first-child{
+		float: left;
+		width: 120px;
+		height: 100%;
+		text-align: center;
+	}
+	.username{
+		color: black;
+		font-size: 20px;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+	.user>img{
+		height: 100%;
+		width: 75px;
+		float: right;
+		border-radius:50%
+	}
+	button{
+		width: 50px;
+		margin-top: 5px;
+		height: 20px;
+		border-radius: 10px;
+		transition: all 0.2s;
+		cursor: pointer;
+		outline: none;
+	}
+	button:not(:last-child){
+		background-color: #ecf5ff;
+		color: #e6a23c;
+		border: 1px solid #f5dab1;
+	}
+	button:not(:last-child):hover{
+		background-color: #e6a23c;
+		color: white;
+	}
+	button:last-child{
+		background-color: #ecf5ff;
+		color: #f56c6c;
+		border: 1px solid #fbc4c4;
+	}
+	button:last-child:hover{
+		background-color: #f56c6c;
+		color: white;
+	}
+	.store{
+		width: 90%;
+		height: 600px;
+		margin: 0 auto;
+		background-color: rgba(255,255,255,0.6);
+		display: grid;
+		grid-template-columns: repeat(5, 18%);
+		grid-template-rows: repeat(2, 45%);
+		align-content: space-around;
+		justify-content: space-around;
+	}
+	.store>div{
+		background-color: white;
+		padding: 5px;
+		position:relative;
+	}
+	img{
+		width: 100%;
+		height: 75%;
+	}
+	.caption>button{
+		position: absolute;
+		right: 0;
+	}
+	.Price{
+		color: red;
+		margin: 5px;
+	}
+	.GoodName{
+		margin: 5px;
+	}
+</style>
