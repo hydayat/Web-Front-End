@@ -14,8 +14,8 @@
 					Hidayat
 				</div>
 				<div>
-					<button class="AccountButton">Cart</button>
-					<button class="AccountButton">Order</button>
+					<button class="AccountButton" onclick="showCart()">Cart</button>
+					<button class="AccountButton" onclick="showOrder()">Order</button>
 				</div>
 			</div>
 			<div class="Avator"></div>
@@ -50,7 +50,7 @@
 							<hr>
 							<br>
 							<br>
-							<button class="AddButton">Add To shopping Cart</button>
+							<button class="AddButton" onclick="addCart()">Add To shopping Cart</button>
 						</div>
 					</div>
 				</div>
@@ -73,12 +73,17 @@
 				}
 				return(false);
 			}
+			function addCart(){
+				alert("Add to Shopping Cart Successfully!");
+				document.location.href = "store.html";
+			}
 		</script>
+		<script src="js/account.js"></script>
 	</body>
 </html>
 <style>
 	.Body {
-		background-image: url(img/patato.jpg);
+		background-image: url(img/river.jpg);
 		background-size: 100%;
 	}
 	.MainContent{

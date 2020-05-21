@@ -19,8 +19,8 @@
 					Hidayat
 				</div>
 				<div>
-					<button class="AccountButton">Cart</button>
-					<button class="AccountButton">Order</button>
+					<button class="AccountButton" onclick="showCart()">Cart</button>
+					<button class="AccountButton" onclick="showOrder()">Order</button>
 				</div>
 			</div>
 			<div class="Avator"></div>
@@ -85,6 +85,7 @@
 				document.location.href = "createOrder.html?GoodName="+encodeURI(goodName);
 			}
 		</script>
+		<script src="js/account.js"></script>
 	</body>
 </html>
 <style>
