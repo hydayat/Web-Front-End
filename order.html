@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body class="Body">
+		<div class="TitleDiv">
+			<h1 align="center" class="Title">
+				Order List
+				<button class="BackButton" onclick="back()"><< Store</button>
+			</h1>
+		</div>
+		<div class="User">
+			<div class="UserInfo">
+				<div class="Username">
+					Hidayat
+				</div>
+				<div>
+					<button class="AccountButton" onclick="showCart()">Cart</button>
+					<button class="AccountButton" onclick="showOrder()">Order</button>
+				</div>
+			</div>
+			<div class="Avator"></div>
+		</div>
+		<hr width="90%" color="antiquewhite">
+		<div class="BelowDiv">
+			<!-- <div class="BackButtonDiv">
+				<button><< Back to store</button>
+			</div> -->
+			<div class="CartDiv">
+				<div class="CartBar">
+					<div>
+						Image
+					</div>
+					<div>
+						Name
+					</div>
+					<div>
+						Date
+					</div>
+					<div>
+						Price
+					</div>
+					<div>
+						Amount
+					</div>
+					<div>
+						Total
+					</div>
+				</div>
+				<div class="CartContent">
+					<div class="Item">
+						<div class="Atom">
+							<div class="ItemImg"></div>
+						</div>
+						<div class="Atom">
+							<p align="center" class="GoodName">M1A1</p>
+						</div>
+						<div class="Atom">
+							<p align="center" class="Date">2012-5-12</p>
+						</div>
+						<div class="Atom">
+							<p align="center" class="Price">￥500</p>
+						</div>
+						<div class="Atom">
+							<p align="center" class="Amount">8</p>
+						</div>
+						<div class="Atom">
+							<p align="center" class="Total">￥4000</p>
+						</div>
+						
+					</div>
+					<hr>
+					<div class="Item">
+						<div class="Atom">
+							<div class="ItemImg"></div>
+						</div>
+						<div class="Atom">
+							<p align="center" class="GoodName">M1A1</p>
+						</div>
+						<div class="Atom">
+							<p align="center" class="Date">2012-5-12</p>
+						</div>
+						<div class="Atom">
+							<p align="center" class="Price">￥500</p>
+						</div>
+						<div class="Atom">
+							<p align="center" class="Amount">8</p>
+						</div>
+						<div class="Atom">
+							<p align="center" class="Total">￥4000</p>
+						</div>
+						
+					</div>
+					<hr>
+				</div>
+			</div>
+		</div>
+		<script src="js/account.js"></script>
+		<script>
+			function back(){
+				document.location.href = "store.html";
+			}
+		</script>
+	</body>
+</html>
+<style>
+	.Body {
+		background-image: url(img/farm.jpg);
+		background-size: 100%;
+	}
+	.TitleDiv {
+		display: inline-block;
+		width: 37%;
+	}
+	.Title{
+		color: #FFFFFF;
+		font-size: 50px;
+	}
+	.User{
+		height: 80px;
+		width: 200px;
+		background-color: rgba(255,255,255,0.5);
+		float: right;
+		margin-right: 80px;
+		margin-top: 20px;
+		padding: 5px;
+	}
+	.UserInfo{
+		float: left;
+		width: 120px;
+		height: 100%;
+		text-align: center;
+	}
+	.Username{
+		color: black;
+		font-size: 20px;
+		margin-top: 5px;
+	}
+	.Avator{
+		height: 100%;
+		width: 75px;
+		float: right;
+		background-image: url(img/avator.jpg);
+		background-size: 100% 100%;
+		border-radius:50%
+	}
+	.AccountButton{
+		width: 50px;
+		margin-top: 15px;
+	}
+	.BelowDiv {
+		display: flex;
+		justify-content: space-around;
+	}
+	.CartDiv {
+		width: 90%;
+	}
+	.CartBar {
+		height: 40px;
+		margin: 0 auto;
+		display: flex;
+		justify-content: space-around;
+		font-size: 20px;
+		font-weight: 900;
+		padding-top: 8px;
+	}
+	.CartContent {
+		height: 550px;
+		margin-top: 20px;
+		padding-top: 8px;
+	}
+	.CartBar, .CartContent {
+		width: 100%;
+		border-radius: 10px;
+	}
+	.CartBar {
+		background-color: rgba(255, 255, 255, 0.7);
+	}
+	.CartContent {
+		background-color: rgba(255, 255, 255, 0.7);
+	}
+	.Item {
+		width: 98%;
+		height: 100px;
+		background-color: rgba(255, 255, 255);
+		display: flex;
+		justify-content: space-around;
+		font-weight: 400;
+		border-radius: 10px;
+		margin: 0 auto;
+	}
+	.ItemImg {
+		height: 100%;
+		width: 100px;
+		background-image: url(img/Good/M1A1.jpg);
+		/* background-color: #000000; */
+		background-size: 100% 100%;
+		margin: 0 auto;
+	}
+	.Atom {
+		height: 100%;
+		width: 16%;
+		display: flex;
+		justify-content: space-around;
+		/* background: #CCCCCC; */
+	}
+	.Total {
+		color: #FF0000;
+	}
+	.Price, .Total, .GoodName, .Amount, .Date {
+		margin-top: 30px;
+		font-size: 20px;
+	}
+	.BuyButton, .DeleteButton, .BackButton {
+		width: 80px;
+		height: 35px;
+		margin-top: 10px;
+		border: none;
+		color: white;
+		font-size: 15px;
+		border-radius: 5px;
+	}
+	.BuyButton {
+		background-color: darkseagreen;
+	}
+	.DeleteButton {
+		background-color: brown;
+	}
+	.BackButton {
+		margin-left: 20px;
+		background-color: #4169E1;
+	}
+</style>
+
