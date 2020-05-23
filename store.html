@@ -146,6 +146,13 @@
 					</div>
 				</div>
 			</div>
+			<div class="PageDiv">
+				<div class="PageButtonGroup">
+					<button class="PageButton">◀</button>
+					1 / 2
+					<button class="PageButton" onclick="nextPage()">▶</button>
+				</div>
+			</div>
 		</div>
 		<script>
 			window.onload = function(){
@@ -170,6 +177,9 @@
 				goodName = document.getElementById("GoodName"+index).innerText;
 				price = document.getElementById("Price"+index).innerText.substring(1);
 				document.location.href = "createOrder.html?GoodName="+encodeURI(goodName)+"&Price="+price+"&Amount=0";
+			}
+			function nextPage(){
+				document.location.href = "store2.html";
 			}
 		</script>
 		<script src="js/account.js"></script>
@@ -300,5 +310,24 @@
 	.GoodButton{
 		width: 50px;
 		margin-top: 5px;
+	}
+	.PageDiv {
+		display: flex;
+		justify-content: center;
+		margin-top: 20px;
+	}
+	.PageButtonGroup {
+		display: inline-block;
+	}
+	.PageButton {
+		width: 30px;
+		height: 30px;
+		margin-left: 10px;
+		margin-right: 10px;
+		font-size: 25px;
+		border: none;
+		color: #808080;
+		background: none;
+		border-radius: 5px;
 	}
 </style>
