@@ -2,14 +2,19 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>V-Mall</title>
-		<link rel="stylesheet" type="text/css" href="css/store.css"/>
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/transact.css"/>
+		<style>
+			body{
+				background-image: url(img/cart.jpg);
+			}
+		</style>
 		<script src="js/toolUI.js"></script>
-		<script src="js/store.js"></script>
 	</head>
 	<body>
 		<div>
 			<h1>V-Mall</h1>
+			<h3>Cart</h3>
 			<div class="user">
 				<div>
 					<div class="username">
@@ -21,28 +26,7 @@
 				<img src="img/avator.jpg" />
 			</div>
 		</div>
-		<br>
 		<div id="modal" class="hide">
-			<div id="cart">
-				<a>&times;</a>
-				<h2>Milk</h2>
-				<hr>
-				<div>
-					<label>Price:</label>
-					<label class="price">￥500</label>
-				</div>
-				<hr>
-				<div>
-					<label>Amount:</label>
-					<div class="amount">
-						<button class="round">-</button>
-						<input value="0"/>
-						<button class="round">+</button>
-					</div>
-				</div>
-				<hr>
-				<button onclick="addCart()">Add to Cart</button>
-			</div>
 			<div id="order">
 				<a>&times;</a>
 				<h2>Milk</h2>
@@ -54,14 +38,14 @@
 				<hr>
 				<div>
 					<label>Price:</label>
-					<label class="price">￥500</label>
+					<label class="price">￥0</label>
 				</div>
 				<hr>
 				<div>
 					<label>Amount:</label>
 					<div class="amount">
 						<button class="round">-</button>
-						<input value="0"/>
+						<input id="amount" value="0"/>
 						<button class="round">+</button>
 					</div>
 				</div>
@@ -74,7 +58,53 @@
 				<button onclick="addCart()">Add to Cart</button>
 			</div>
 		</div>
-		<div id="store">
+		<div class="cartPanel">
+			<div class="CartBar">
+				<div>
+					Image
+				</div>
+				<div>
+					Name
+				</div>
+				<div>
+					Price
+				</div>
+				<div>
+					Amount
+				</div>
+				<div>
+					Total
+				</div>
+				<div>
+					Option
+				</div>
+			</div>
+			<hr/>
+			<div id="cartContent">
+				<div class='item'> 
+					<div>
+						<img/>
+					</div>
+					<div> 
+						<p>goodName</p> 
+					</div>
+					<div> 
+						<p>￥price</p> 
+					</div>
+					<div> 
+						<p>amount</p>
+					</div>
+					<div>
+						<p class="total">￥total</p>
+					</div>
+					<div>
+						<div>
+							<button class='buy'>Buy</button><br>
+							<button class='delete' onclick='remove(i)'>Delete</button>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>

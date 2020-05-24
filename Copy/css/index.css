@@ -3,7 +3,7 @@ The stylesheet for the index.html
 */
 
 body {
-    background-image: url(../img/star.jpg);
+    background-image: url(../img/index.jpg);
     background-size: 100%;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
@@ -55,9 +55,6 @@ h1+p {
 .shiftleft{
     transform:translateX(-100%)
 }
-/* .shiftcenter{
-    transform: translateX(0%);
-} */
 .shiftright{
     transform: translateX(100%);
 }

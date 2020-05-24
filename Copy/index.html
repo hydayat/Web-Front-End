@@ -4,6 +4,7 @@
 		<meta charset="utf-8" />
 		<title>V-Mall</title>
 		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<script src="js/index.js"></script>
 	</head>
 	<body>
 		<div class="main">
@@ -19,90 +20,25 @@
 					<div id="login">
 						<h1>Log In</h1>
 						<form>
-							<input id="username" type="text" placeholder="username" value="">
-							<input id="password" type="password" placeholder="password" value="">
-							<button type="button" onclick="login()">Log in</button>
-							<button type="button" onclick="shift()">Sign up</button>
+							<input id="usernameLog" type="text" placeholder="username" value="">
+							<input id="passwordLog" type="password" placeholder="password" value="">
+							<button type="button">Log in</button>
+							<button type="button">Sign up</button>
 						</form>
 					</div>
 					<div id="signup" class="shiftright">
 						<h1>Sign Up</h1>
 						<form>
-							<input id="username" type="text" placeholder="username" value="">
-							<input id="password1" type="password" placeholder="password" value="">
-							<input id="password2" type="password" placeholder="password-re" value="">
-							<button type="button" onclick="signup()">Confirm</button>
-							<button type="button" onclick="back()">Back</button>
+							<input id="usernameSign" type="text" placeholder="username" value="">
+							<input id="passwordSign" type="password" placeholder="password" value="">
+							<input id="passwordRe" type="password" placeholder="password-re" value="">
+							<button type="button">Confirm</button>
+							<button type="button">Back</button>
 						</form>
 					</div>
 				</div>
 				<a href='store.html'>Go To Store Directly &rArr;</a>
 			</div>
 		</div>
-		<script type="text/javascript">
-			function shift(){
-				document.getElementById('login').classList.add('shiftleft');
-				document.getElementById('signup').classList.remove('shiftright');
-			}
-			function back(){
-				document.getElementById('login').classList.remove('shiftleft');
-				document.getElementById('signup').classList.add('shiftright');
-			}
-			function login() {
-				//创建核心对象
-				xmlhttp = null;
-				if (window.XMLHttpRequest) { // code for Firefox, Opera, IE7, etc.
-					xmlhttp = new XMLHttpRequest();
-				} else if (window.ActiveXObject) { // code for IE6, IE5
-					xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-				}
-				//编写回调函数
-				xmlhttp.onreadystatechange = function() {
-					//if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-					if (xmlhttp.readyState == 4) {
-						document.location.href="store.html"
-					}
-				}
-				//open设置请求方式和请求路径
-				xmlhttp.open("post", "/signup", true); //一个servlet，后面还可以写是否同步
-				//设置发送数据为表单
-				xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-				//send 发送
-				var username = document.getElementById("username").value;
-				var password = document.getElementById("password").value;
-				xmlhttp.send("username=" + username + "&password=" + password);
-			}
-			function signup() {
-				//检查密码是否一致
-				var password1 = document.getElementById("password1").value;
-				var password2 = document.getElementById("password2").value;
-				if(password1 != password2){
-					alert("两次输入的密码不一致");
-					return;
-				}
-				//创建核心对象
-				xmlhttp = null;
-				if (window.XMLHttpRequest) { // code for Firefox, Opera, IE7, etc.
-					xmlhttp = new XMLHttpRequest();
-				} else if (window.ActiveXObject) { // code for IE6, IE5
-					xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-				}
-				//编写回调函数
-				xmlhttp.onreadystatechange = function() {
-					//if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-					if (xmlhttp.readyState == 4) {
-						document.location.href="signin.html";
-					}
-				}
-				//open设置请求方式和请求路径
-				xmlhttp.open("post", "/signup", true); //一个servlet，后面还可以写是否同步
-				//设置发送数据为表单
-				xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-				//send 发送
-				var username = document.getElementById("username").value;
-				xmlhttp.send("username=" + username + "&password=" + password1);
-			}
-		</script>
-
 	</body>
 </html>

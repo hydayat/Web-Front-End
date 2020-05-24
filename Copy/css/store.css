@@ -1,0 +1,235 @@
+/* 
+The stylesheet for store.html
+*/
+
+body{
+    background-image: url(../img/store.jpg);
+    background-size: 100%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top: 0;
+}
+h1{
+    display: inline-block;
+    color: rgb(27, 27, 27);
+    font-size: 4.5rem;
+    text-align:	center;
+    margin: 20px;
+    cursor: pointer;
+}
+body>div:first-child{
+    background-color: rgba(255,255,255,0.6);
+    width: 85%;
+    margin: 0 auto;
+    backdrop-filter: blur(3px);
+}
+input{
+    border: 1px solid #dcdfe6;
+    border-radius: 4px;
+    outline: none;
+    box-sizing: border-box;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    margin: 0;
+}
+input:focus{
+    border-color: #409eff;
+}
+button{
+    background-color: #ecf5ff;
+    color: #409eff;
+    border: 1px solid #b3d8ff;
+    width: 50px;
+    margin-top: 7px;
+    height: 20px;
+    border-radius: 10px;
+    transition: all 0.2s;
+    cursor: pointer;
+    outline: none;
+}
+button:hover{
+    background-color: #409eff;
+    color: white;
+}
+.user{
+    height: 100%;
+    width: 200px;
+    background-color: rgba(255,255,255,0.6);
+    float: right;
+    margin-right: 80px;
+    margin-top: 20px;
+    padding: 5px;
+    transition: filter 0.3s;
+}
+.user:hover{
+    filter: brightness(0.9);
+}
+.user>div:first-child{
+    float: left;
+    width: 120px;
+    height: 100%;
+    text-align: center;
+}
+.username{
+    color: black;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.user>img{
+    height: 100%;
+    width: 75px;
+    float: right;
+    border-radius:50%
+}
+.cart{
+    background-color: #ecf5ff;
+    color: #e6a23c;
+    border: 1px solid #f5dab1;
+}
+.cart:hover{
+    background-color: #e6a23c;
+    color: white;
+}
+.order{
+    background-color: #ecf5ff;
+    color: #f56c6c;
+    border: 1px solid #fbc4c4;
+}
+.order:hover{
+    background-color: #f56c6c;
+    color: white;
+}
+#store{
+    width: 70%;
+    height: 460px;
+    margin: 30px auto;
+    text-align: left;
+    background-color: rgba(255,255,255,0);
+    overflow: auto;
+}
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: rgba(240, 240, 240, .5);
+    box-shadow: inset 0 0 0px rgba(240, 240, 240, .5);
+}
+#store>div{
+    vertical-align: middle;
+    background-color: white;
+    display: inline-block;
+    width: 230px;
+    height: 210px;
+    margin: 10px 12px;
+    position: relative;
+    overflow: hidden;
+    transition: filter 0.3s;
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+#store>div:hover .caption{
+    transform: translateY(-100%);
+}
+#store>div:hover{
+    filter: brightness(0.9);
+}
+.caption{
+    background-color: rgba(230,230,230,0.6);
+    width: 100%;
+    position: absolute;
+    height: 30%;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    transform:  scale(1.1) translateY(10%);
+    transition: transform 0.3s;
+}
+.caption>div{
+    display: inline-block;
+    width: 45%;
+    height: 100%;
+    vertical-align: middle;
+}
+label{
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin: 5px;
+}
+#total{
+    color: red;
+    font-weight: bold;
+}
+#modal{
+    position: fixed;
+    background-color: rgba(255,255,255,0.6);
+    backdrop-filter: blur(10px);
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    top: 50%;
+    z-index: 999;
+    transition: all 0.3s;
+}
+.hide{
+    visibility: hidden;
+    transform: translate(-50%, -80%);
+    opacity: 0.0;
+}
+.show{
+    visibility: visible;
+    opacity: 1.0;
+    transform: translate(-50%, -50%);
+}
+#modal>div{
+    position: relative;
+    width: 25%;
+    height: 35%;
+    margin: 200px auto;
+    background-color:  rgba(255,255,255,0.9);
+    padding: 2%;
+}
+.round{
+    height: 30px;
+    width: 30px;
+    border-radius: 0;
+    text-align: center;
+    margin: 0;
+}
+h2{
+    margin-top: 2%;
+    text-align: center;
+    font-size: 2.5rem;
+}
+#cart>button,#order>button{
+    margin: 20px 30% 0;
+    width: 40%;
+    height: 40px;
+}
+label:first-child{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+#modal a{
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+#cart{
+    display: none;
+}
+#order{
+    display: block;
+    height: 45% !important;
+}
+label:last-child, .amount{
+    float: right;
+}
+.amount{
+    height: 80%;
+}

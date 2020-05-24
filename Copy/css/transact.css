@@ -1,0 +1,252 @@
+/* 
+The stylesheet for cart.html
+*/
+
+body {
+    /* background-image: url(../img/transaction.jpg); */
+    background-size: 100%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top: 0;
+}    
+h1{
+display: inline-block;
+color: rgb(27, 27, 27);
+font-size: 4.5rem;
+text-align:	center;
+margin: 20px;
+cursor: pointer;
+}
+h3{
+    display: inline-block;
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 20px;
+}
+body>div:first-child{
+    background-color: rgba(255,255,255,0.6);
+    width: 85%;
+    margin: 0 auto;
+    backdrop-filter: blur(3px);
+}
+button{
+height: 30px;
+width: 60px;
+border-radius: 10px;
+transition: all 0.2s;
+cursor: pointer;
+outline: none;
+background-color: #ecf5ff;
+color: #409eff;
+border: 1px solid #b3d8ff;
+}
+button:hover{
+background-color: #409eff;
+color: white;
+}
+.user{
+height: 100%;
+width: 200px;
+background-color: rgba(255,255,255,0.6);
+float: right;
+margin-right: 80px;
+margin-top: 20px;
+padding: 5px;
+transition: filter 0.3s;
+}
+.user:hover{
+filter: brightness(0.9);
+}
+.user>div:first-child{
+float: left;
+width: 120px;
+height: 100%;
+text-align: center;
+}
+.username{
+color: black;
+font-size: 20px;
+margin-top: 10px;
+margin-bottom: 10px;
+}
+.user>img{
+height: 100%;
+width: 75px;
+float: right;
+border-radius:50%
+}
+button{
+width: 50px;
+margin-top: 7px;
+height: 20px;
+border-radius: 10px;
+transition: all 0.2s;
+cursor: pointer;
+outline: none;
+}
+.cartPanel {
+    margin: 20px auto;
+    width: 80%;
+}
+.cartPanel>div:first-child {
+    height: 40px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.8rem;
+    font-weight: 900;
+    padding-top: 8px;
+    color: white;
+}
+#cartContent {
+    height: 500px;
+    margin-top: 20px;
+    padding-top: 8px;
+}
+.item {
+    width: 100%;
+    height: 100px;
+    background-color: rgba(255,255,255,0.85);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.3rem;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+.item>div{
+    width: 5rem;
+}
+.item>img {
+    height: 5rem;
+    width: 5rem;
+    margin: 0 auto;
+}
+.cart{
+    background-color: #ecf5ff;
+    color: #e6a23c;
+    border: 1px solid #f5dab1;
+}
+.cart:hover{
+    background-color: #e6a23c;
+    color: white;
+}
+.order{
+    background-color: #ecf5ff;
+    color: #f56c6c;
+    border: 1px solid #fbc4c4;
+}
+.order:hover{
+    background-color: #f56c6c;
+    color: white;
+}
+.buy{
+    background-color: #ecf5ff;
+    color: #67c23a;
+    border: 1px solid#c2e7b0;
+    width: 80px;
+    height: 35px;
+    font-size: 15px;
+    border-radius: 5px;
+}
+.buy:hover{
+    background-color: #67c23a;
+    color: white;
+}
+.delete{
+    background-color: #ecf5ff;
+    color: #f56c6c;
+    border: 1px solid #fbc4c4;
+    width: 80px;
+    height: 35px;
+    font-size: 15px;
+    border-radius: 5px;
+}
+.delete:hover{
+    background-color: #f56c6c;
+    color: white;
+}
+#modal{
+    position: fixed;
+    background-color: rgba(255,255,255,0.6);
+    backdrop-filter: blur(10px);
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    top: 50%;
+    z-index: 999;
+    transition: all 0.3s;
+}
+.hide{
+    visibility: hidden;
+    transform: translate(-50%, -80%);
+    opacity: 0.0;
+}
+.show{
+    visibility: visible;
+    opacity: 1.0;
+    transform: translate(-50%, -50%);
+}
+#modal>div{
+    position: relative;
+    width: 25%;
+    height: 35%;
+    margin: 200px auto;
+    background-color:  rgba(255,255,255,0.9);
+    padding: 2%;
+}
+.round{
+    height: 30px;
+    width: 30px;
+    border-radius: 0;
+    text-align: center;
+    margin: 0;
+}
+h2{
+    margin-top: 2%;
+    text-align: center;
+    font-size: 2.5rem;
+}
+#cart>button,#order>button{
+    margin: 20px 30% 0;
+    width: 40%;
+    height: 40px;
+}
+label:first-child{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+#modal a{
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+#order{
+    display: block;
+    height: 45% !important;
+}
+label:last-child, .amount{
+    float: right;
+}
+.amount{
+    height: 80%;
+}
+input{
+    border: 1px solid #dcdfe6;
+    border-radius: 4px;
+    outline: none;
+    box-sizing: border-box;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    margin: 0;
+}
+input:focus{
+    border-color: #409eff;
+}
+#total,.total{
+    color: red;
+    font-weight: bold;
+}
